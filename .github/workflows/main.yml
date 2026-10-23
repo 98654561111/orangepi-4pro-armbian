@@ -12,7 +12,13 @@ name: Build Arch Linux ARM for OPI 4 Pro 12GB
 # 流程說明：
 #   1-5. 照 bzbk 的 BUILD.md：00 裝依賴 → 10 抓 orangepi-build(已 pin commit，
 #        含 native-arm64 patch) → 20 編 vendor U-Boot + kernel 6.6.98-sun60iw2
-#   6.   檢查 deb 產物（dtb 名稱、kernel 版本），有問題早點炸，不要浪費兩小時
+#   6.   檢查＋整理 deb 產物（fail fast，有問題早點炸）：
+#        - u-boot deb 會落在 $DEBS/u-boot 子目錄 → hoist 到 $DEBS
+#        - linux-image-dbg deb 會干擾組裝腳本的 glob → 移開
+#        - 確認 u-boot deb 內有 boot0_sdcard.fex＋boot_package.fex
+#        - dtb 實際檔名是 sun60i-a733-orangepi-4-pro.dtb（有 dash，
+#          跟 board conf 的 BOOT_FDT_FILE 一致；bzbk 腳本寫錯成無 dash，
+#          這裡直接 sed patch 掉）
 #   7.   30-make-arch-rootfs.sh：抓 ALARM aarch64 rootfs，pacman 裝基礎系統
 #   8.   補上 bzbk 腳本沒做的三件事：
 #        - 把 kernel deb 的 /lib/modules 裝進 rootfs（否則 mkinitcpio 做不出來，
@@ -68,17 +74,46 @@ jobs:
       - name: Build vendor U-Boot + kernel
         run: ./arch-build/scripts/20-build-kernel-uboot.sh
 
-      - name: Verify deb artifacts（fail fast）
+      - name: Verify + stage deb artifacts（fail fast）
         run: |
           set -e
           DEBS="$GITHUB_WORKSPACE/arch-build/orangepi-build/output/debs"
+
+          # u-boot deb 會被放在 $DEBS/u-boot 子目錄，但 40 腳本只認 $DEBS 底下 → hoist 上來
+          UBDEB_SRC=$(find "$DEBS" -name 'linux-u-boot-current-orangepi4pro_*.deb' | head -1)
+          [ -n "$UBDEB_SRC" ] || { echo "ERROR: u-boot deb not found"; exit 1; }
+          cp -f "$UBDEB_SRC" "$DEBS/"
+          echo "u-boot deb: $UBDEB_SRC"
+
+          # -dbg deb 會干擾 40 的 glob（head -1 會先抓到它）→ 移開
+          mkdir -p "$DEBS/dbg"
+          mv -f "$DEBS"/linux-image-current-sun60iw2-dbg_*.deb "$DEBS/dbg/" 2>/dev/null || true
           ls -lh "$DEBS"
+
+          # u-boot deb 內必須有 boot0 + boot_package，否則 40 會靜默跳過寫 bootloader
+          rm -rf /tmp/ubcheck && mkdir -p /tmp/ubcheck
+          dpkg-deb -x "$DEBS"/linux-u-boot-current-orangepi4pro_*.deb /tmp/ubcheck
+          echo "--- fex in u-boot deb:"
+          find /tmp/ubcheck -name '*.fex' | sed 's|.*/||' | sort
+          test -n "$(find /tmp/ubcheck -name 'boot0_sdcard.fex')" \
+            || { echo "ERROR: boot0_sdcard.fex not in u-boot deb"; exit 1; }
+          test -n "$(find /tmp/ubcheck -name 'boot_package.fex')" \
+            || { echo "ERROR: boot_package.fex not in u-boot deb"; exit 1; }
+
+          # dtb 名稱：實際是 sun60i-a733-orangepi-4-pro.dtb（有 dash），
+          # bzbk 腳本寫的是無 dash 版 → 直接 patch 掉
           rm -rf /tmp/debcheck && mkdir -p /tmp/debcheck
           dpkg-deb -x "$DEBS"/linux-dtb-current-sun60iw2_*.deb /tmp/debcheck
           echo "--- dtb files in deb:"
           find /tmp/debcheck -name '*.dtb' | sed 's|.*/||' | sort
-          test -n "$(find /tmp/debcheck -name 'sun60i-a733-orangepi-4pro.dtb')" \
-            || { echo "ERROR: expected dtb sun60i-a733-orangepi-4pro.dtb not in deb"; exit 1; }
+          test -n "$(find /tmp/debcheck -name 'sun60i-a733-orangepi-4-pro.dtb')" \
+            || { echo "ERROR: expected dtb sun60i-a733-orangepi-4-pro.dtb not in deb"; exit 1; }
+          sed -i 's/sun60i-a733-orangepi-4pro\.dtb/sun60i-a733-orangepi-4-pro.dtb/' \
+            "$GITHUB_WORKSPACE/arch-build/scripts/40-assemble-image.sh"
+          grep -n "sun60i-a733-orangepi-4-pro.dtb" \
+            "$GITHUB_WORKSPACE/arch-build/scripts/40-assemble-image.sh"
+
+          # kernel 版本（40 腳本寫死 KVER=6.6.98-sun60iw2）
           rm -rf /tmp/kcheck && mkdir -p /tmp/kcheck
           dpkg-deb -x "$DEBS"/linux-image-current-sun60iw2_*.deb /tmp/kcheck
           echo "--- kernel modules version:"
@@ -132,7 +167,8 @@ jobs:
           # 5) dtb 雙檔名（有/無 dash），cover fdtfile 的兩種可能
           rm -rf /tmp/dtbdeb && mkdir -p /tmp/dtbdeb
           dpkg-deb -x "$DEBS"/linux-dtb-current-sun60iw2_*.deb /tmp/dtbdeb
-          REALDTB=$(find /tmp/dtbdeb -name 'sun60i-a733-orangepi-4pro.dtb' | head -1)
+          REALDTB=$(find /tmp/dtbdeb -name 'sun60i-a733-orangepi-4-pro.dtb' | head -1)
+          [ -n "$REALDTB" ] || { echo "4pro dtb not found in deb"; exit 1; }
           sudo mkdir -p "$ROOTFS/boot/dtb/allwinner"
           sudo cp -f "$REALDTB" "$ROOTFS/boot/dtb/allwinner/sun60i-a733-orangepi-4pro.dtb"
           sudo cp -f "$REALDTB" "$ROOTFS/boot/dtb/allwinner/sun60i-a733-orangepi-4-pro.dtb"
