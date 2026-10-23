@@ -1,1 +1,129 @@
-IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiJSZXBhY2sgT3JhbmdlIFBpIDQgUHJvIGJvb3QwIGJsb2JzIHdpdGggdGhlIHRlc3RlZCAxMkdCIERSQU0gY29uZmlnLgoKVXNhZ2U6IHJlcGFjay1ib290MC0xMmdiLnB5IDxwYWNrLXVib290LXRvb2xzLWRpcj4gPGJsb2ItZGlyPgoKSW5wdXRzIChpbiA8YmxvYi1kaXI+KToKICBib290MF9zZGNhcmRfb3JhbmdlcGk0cHJvLmZleCAgICAgIHN0b2NrIHNkY2FyZCBib290MCBibG9iCiAgYm9vdDBfc3Bpbm9yX29yYW5nZXBpNHByby5mZXggICAgICBzdG9jayBzcGlub3IgYm9vdDAgYmxvYgogIHN5c19jb25maWdfb3JhbmdlcGk0cHJvXzEyZ2IuZmV4ICAgcGF0Y2hlZCBzeXNfY29uZmlnICgxMkdCIG1hbnVhbCBEUkFNLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgc2VsZWN0X21vZGU9MDsgTEYgb3IgQ1JMRiBvaykKCk91dHB1dHMgKGluIDxibG9iLWRpcj4pOgogIGJvb3QwX3NkY2FyZF9vcmFuZ2VwaTRwcm9fMTJnYi5mZXgKICBib290MF9zcGlub3Jfb3JhbmdlcGk0cHJvXzEyZ2IuZmV4CgpNZXRob2Q6CiAgLSBzZGNhcmQ6IEFsbHdpbm5lcidzIHVwZGF0ZV9ib290MCAoM3JkIGFyZyBpZ25vcmVkOyB1cGRhdGVzIGluIHBsYWNlKS4KICAtIHNwaW5vcjogdXBkYXRlX2Jvb3QwIHJlamVjdHMgaXRzIGxheW91dCwgc28gdGhlIHNhbWUgMTEgd29yZCBjaGFuZ2VzCiAgICBhcmUgYXBwbGllZCBtYW51YWxseSArIGFkZGl0aXZlIGNoZWNrc3VtIGZpeCAodmVyaWZpZWQgZXF1aXZhbGVudCkuCiAgLSBib3RoIG91dHB1dHMgYXJlIHZlcmlmaWVkOiAzMiBEUkFNIGZpZWxkcyA9PSBSYWR4YSBDdWJpZSBBN0EgMTJHQgogICAgdmFsdWVzIGFuZCBzZWxlY3RfbW9kZSA9PSAwLgoiIiIKaW1wb3J0IG9zCmltcG9ydCBzdHJ1Y3QKaW1wb3J0IHN1YnByb2Nlc3MKaW1wb3J0IHN5cwoKIyBFeHBlY3RlZCAxMkdCIERSQU0gc3RydWN0IChSYWR4YSBDdWJpZSBBN0EgW2RyYW1fcGFyYTNdKSwgZmllbGQgb3JkZXIgYXMKIyBzdG9yZWQgaW4gdGhlIGJvb3QwIGRyYW0gcGFyYSBzdHJ1Y3QuCkVYUEVDVEVEID0gWwogICAgMTgwMCwgOSwgMHgwRTBFMEUwRSwgMHgwRjBGMEYwRiwgMHhFQzAzMEUwRiwgMCwKICAgIDB4QTExQSwgMHgxMDAxLAogICAgMCwgMCwgMCwgMHg2LCAwLCAwLCAwLAogICAgMHgxMiwgMHg0NCwgMCwgMHgzNCwgMCwgMHg4NiwgMCwKICAgIDB4NDA0MCwgMCwgMHgxMTA4MDUwMywgMHgzODAwLCAweDM1MTQsCiAgICAweEIyNUYwMDAwLCAwLCAwLCAweDEwMDY1LCAwLApdCiMgKG9mZnNldCwgb2xkX3ZhbHVlLCBuZXdfdmFsdWUpIGZvciB0aGUgc3Bpbm9yIG1hbnVhbCBwYXRjaC4KU1BJTk9SX0NIQU5HRVMgPSB7CiAgICAweDUwOiAoMHhBMEZBLCAweEExMUEpLAogICAgMHg3NDogKDB4MTMsIDB4MTIpLAogICAgMHg4MDogKDB4MkUsIDB4MzQpLAogICAgMHg4ODogKDB4NiwgMHg4NiksCiAgICAweDk4OiAoMHgxNzBCMDcwMywgMHgxMTA4MDUwMyksCiAgICAweEE0OiAoMHgzMjVGMDAwMCwgMHhCMjVGMDAwMCksCiAgICAweEIwOiAoMHg2MSwgMHgxMDA2NSksCiAgICAweEJDOiAoMHgxMDMwMDAyLCAweDEwMjA5MDIpLAogICAgMHhDNDogKDB4MTAzMDEwMiwgMHgxMDIwQTAyKSwKICAgIDB4Q0M6ICgweDAsIDB4MSksCiAgICAweDM1MDogKDB4MTAyLCAweDEwMCksICAjIHNlbGVjdF9tb2RlIDIgLT4gMCAobG93IGJ5dGUpCn0KU0VMRUNUX01PREVfT0ZGID0gMHgzNTAKCgpkZWYgdmVyaWZ5KHBhdGgpOgogICAgZCA9IG9wZW4ocGF0aCwgInJiIikucmVhZCgpCiAgICBpID0gZC5maW5kKHN0cnVjdC5wYWNrKCI8SUkiLCAweEExMUEsIDB4MTAwMSkpCiAgICBpZiBpIDwgMDoKICAgICAgICByYWlzZSBTeXN0ZW1FeGl0KGYie3BhdGh9OiAxMkdCIGRyYW0gc3RydWN0IG5vdCBmb3VuZCIpCiAgICB2YWxzID0gc3RydWN0LnVucGFja19mcm9tKCI8JWRJIiAlIGxlbihFWFBFQ1RFRCksIGQsIGkgLSAyNCkKICAgIGlmIGxpc3QodmFscykgIT0gRVhQRUNURUQ6CiAgICAgICAgYmFkID0gWyhuLCBoZXgodiksIGhleChlKSkgZm9yIG4sIHYsIGUgaW4KICAgICAgICAgICAgICAgemlwKHJhbmdlKGxlbihFWFBFQ1RFRCkpLCB2YWxzLCBFWFBFQ1RFRCkgaWYgdiAhPSBlXQogICAgICAgIHJhaXNlIFN5c3RlbUV4aXQoZiJ7cGF0aH06IERSQU0gbWlzbWF0Y2g6IHtiYWR9IikKICAgIHNtID0gc3RydWN0LnVucGFja19mcm9tKCI8SSIsIGQsIFNFTEVDVF9NT0RFX09GRilbMF0KICAgIGlmIHNtICYgMHhGRiAhPSAwOgogICAgICAgIHJhaXNlIFN5c3RlbUV4aXQoZiJ7cGF0aH06IHNlbGVjdF9tb2RlIG5vdCAwICh3b3JkPXtoZXgoc20pfSkiKQogICAgcHJpbnQoZiJ7cGF0aH06IDEyR0IgRFJBTSB2ZXJpZmllZCwgc2VsZWN0X21vZGU9MCIpCgoKZGVmIG1haW4oKToKICAgIHRvb2xzLCBibG9iID0gc3lzLmFyZ3ZbMV0sIHN5cy5hcmd2WzJdCiAgICBzZCA9IG9zLnBhdGguam9pbihibG9iLCAiYm9vdDBfc2RjYXJkX29yYW5nZXBpNHByby5mZXgiKQogICAgc3AgPSBvcy5wYXRoLmpvaW4oYmxvYiwgImJvb3QwX3NwaW5vcl9vcmFuZ2VwaTRwcm8uZmV4IikKICAgIGZleCA9IG9zLnBhdGguam9pbihibG9iLCAic3lzX2NvbmZpZ19vcmFuZ2VwaTRwcm9fMTJnYi5mZXgiKQogICAgc2QxMiA9IG9zLnBhdGguam9pbihibG9iLCAiYm9vdDBfc2RjYXJkX29yYW5nZXBpNHByb18xMmdiLmZleCIpCiAgICBzcDEyID0gb3MucGF0aC5qb2luKGJsb2IsICJib290MF9zcGlub3Jfb3JhbmdlcGk0cHJvXzEyZ2IuZmV4IikKICAgIGJpbjEyID0gb3MucGF0aC5qb2luKGJsb2IsICJzeXNfY29uZmlnX29yYW5nZXBpNHByb18xMmdiLmJpbiIpCgogICAgIyBDUkxGIGZvciBBbGx3aW5uZXIgdG9vbHMgKHdvcmsgb24gYSBjb3B5OyBrZWVwIHRyZWUgZmlsZSBhcy1pcykuCiAgICB3aXRoIG9wZW4oZmV4LCAicmIiKSBhcyBmOgogICAgICAgIHJhdyA9IGYucmVhZCgpLnJlcGxhY2UoYiJcclxuIiwgYiJcbiIpLnJlcGxhY2UoYiJcbiIsIGIiXHJcbiIpCiAgICB0bXBmZXggPSBvcy5wYXRoLmpvaW4oYmxvYiwgIl9yZXBhY2tfdG1wLmZleCIpCiAgICB3aXRoIG9wZW4odG1wZmV4LCAid2IiKSBhcyBmOgogICAgICAgIGYud3JpdGUocmF3KQogICAgIyBOT1RFOiB0aGVzZSBBbGx3aW5uZXIgdG9vbHMgbWlzYmVoYXZlIHdpdGggYWJzb2x1dGUgcGF0aHMKICAgICMgKHVwZGF0ZV9ib290MCBzaWxlbnRseSBza2lwcyBzZWxlY3RfbW9kZSk7IGFsd2F5cyB1c2UgY3dkPWJsb2IKICAgICMgYW5kIHJlbGF0aXZlIGZpbGUgbmFtZXMuCiAgICBzdWJwcm9jZXNzLnJ1bihbInNjcmlwdCIsICJfcmVwYWNrX3RtcC5mZXgiXSwKICAgICAgICAgICAgICAgICAgIGN3ZD1ibG9iLCBjaGVjaz1UcnVlLCBzdGRvdXQ9c3VicHJvY2Vzcy5ERVZOVUxMLAogICAgICAgICAgICAgICAgICAgZW52PXsqKm9zLmVudmlyb24sICJQQVRIIjogdG9vbHMgKyBvcy5wYXRoc2VwICsKICAgICAgICAgICAgICAgICAgICAgICAgb3MuZW52aXJvbi5nZXQoIlBBVEgiLCAiIil9KQogICAgb3MucmVuYW1lKG9zLnBhdGguam9pbihibG9iLCAiX3JlcGFja190bXAuYmluIiksIGJpbjEyKQogICAgb3MucmVtb3ZlKHRtcGZleCkKCiAgICAjIHNkY2FyZCB2aWEgQWxsd2lubmVyIHVwZGF0ZV9ib290MCAodXBkYXRlcyBhcmcxIGluIHBsYWNlOyBuZWVkcyAzIGFyZ3MpLgogICAgd2l0aCBvcGVuKHNkLCAicmIiKSBhcyBmOgogICAgICAgIGRhdGEgPSBmLnJlYWQoKQogICAgd2l0aCBvcGVuKHNkMTIsICJ3YiIpIGFzIGY6CiAgICAgICAgZi53cml0ZShkYXRhKQogICAgc3VicHJvY2Vzcy5ydW4oCiAgICAgICAgWyJ1cGRhdGVfYm9vdDAiLCBvcy5wYXRoLmJhc2VuYW1lKHNkMTIpLAogICAgICAgICBvcy5wYXRoLmJhc2VuYW1lKGJpbjEyKSwgIl8iXSwKICAgICAgICBjd2Q9YmxvYiwgY2hlY2s9VHJ1ZSwgc3Rkb3V0PXN1YnByb2Nlc3MuREVWTlVMTCwKICAgICAgICBlbnY9eyoqb3MuZW52aXJvbiwgIlBBVEgiOiB0b29scyArIG9zLnBhdGhzZXAgKwogICAgICAgICAgICAgb3MuZW52aXJvbi5nZXQoIlBBVEgiLCAiIil9KQogICAgdmVyaWZ5KHNkMTIpCgogICAgIyBzcGlub3I6IG1hbnVhbCBwYXRjaCAodXBkYXRlX2Jvb3QwIHJlamVjdHMgdGhpcyBsYXlvdXQpLgogICAgd2l0aCBvcGVuKHNwLCAicmIiKSBhcyBmOgogICAgICAgIGQgPSBieXRlYXJyYXkoZi5yZWFkKCkpCiAgICBmb3Igb2ZmLCAob2xkLCBuZXcpIGluIFNQSU5PUl9DSEFOR0VTLml0ZW1zKCk6CiAgICAgICAgY3VyID0gc3RydWN0LnVucGFja19mcm9tKCI8SSIsIGQsIG9mZilbMF0KICAgICAgICBpZiBjdXIgIT0gb2xkOgogICAgICAgICAgICByYWlzZSBTeXN0ZW1FeGl0KAogICAgICAgICAgICAgICAgZiJzcGlub3IgYmxvYiB1bmV4cGVjdGVkIHZhbHVlIGF0IHtoZXgob2ZmKX06ICIKICAgICAgICAgICAgICAgIGYie2hleChjdXIpfSAhPSBleHBlY3RlZCB7aGV4KG9sZCl9IikKICAgICAgICBzdHJ1Y3QucGFja19pbnRvKCI8SSIsIGQsIG9mZiwgbmV3KQogICAgZGVsdGEgPSBzdW0obiAtIG8gZm9yIG8sIG4gaW4gU1BJTk9SX0NIQU5HRVMudmFsdWVzKCkpICYgMHhGRkZGRkZGRgogICAgY2sgPSBzdHJ1Y3QudW5wYWNrX2Zyb20oIjxJIiwgZCwgMHhDKVswXQogICAgc3RydWN0LnBhY2tfaW50bygiPEkiLCBkLCAweEMsIChjayArIGRlbHRhKSAmIDB4RkZGRkZGRkYpCiAgICB3aXRoIG9wZW4oc3AxMiwgIndiIikgYXMgZjoKICAgICAgICBmLndyaXRlKGQpCiAgICB2ZXJpZnkoc3AxMikKICAgIHByaW50KCIxMkdCIGJvb3QwIHJlcGFjayBjb21wbGV0ZSIpCgoKaWYgX19uYW1lX18gPT0gIl9fbWFpbl9fIjoKICAgIG1haW4oKQo=
+#!/usr/bin/env python3
+"""Repack Orange Pi 4 Pro boot0 blobs with the tested 12GB DRAM config.
+
+Usage: repack-boot0-12gb.py <pack-uboot-tools-dir> <blob-dir>
+
+Inputs (in <blob-dir>):
+  boot0_sdcard_orangepi4pro.fex      stock sdcard boot0 blob
+  boot0_spinor_orangepi4pro.fex      stock spinor boot0 blob
+  sys_config_orangepi4pro_12gb.fex   patched sys_config (12GB manual DRAM,
+                                     select_mode=0; LF or CRLF ok)
+
+Outputs (in <blob-dir>):
+  boot0_sdcard_orangepi4pro_12gb.fex
+  boot0_spinor_orangepi4pro_12gb.fex
+
+Method:
+  - sdcard: Allwinner's update_boot0 (3rd arg ignored; updates in place).
+  - spinor: update_boot0 rejects its layout, so the same 11 word changes
+    are applied manually + additive checksum fix (verified equivalent).
+  - both outputs are verified: 32 DRAM fields == Radxa Cubie A7A 12GB
+    values and select_mode == 0.
+"""
+import os
+import struct
+import subprocess
+import sys
+
+# Expected 12GB DRAM struct (Radxa Cubie A7A [dram_para3]), field order as
+# stored in the boot0 dram para struct.
+EXPECTED = [
+    1800, 9, 0x0E0E0E0E, 0x0F0F0F0F, 0xEC030E0F, 0,
+    0xA11A, 0x1001,
+    0, 0, 0, 0x6, 0, 0, 0,
+    0x12, 0x44, 0, 0x34, 0, 0x86, 0,
+    0x4040, 0, 0x11080503, 0x3800, 0x3514,
+    0xB25F0000, 0, 0, 0x10065, 0,
+]
+# (offset, old_value, new_value) for the spinor manual patch.
+SPINOR_CHANGES = {
+    0x50: (0xA0FA, 0xA11A),
+    0x74: (0x13, 0x12),
+    0x80: (0x2E, 0x34),
+    0x88: (0x6, 0x86),
+    0x98: (0x170B0703, 0x11080503),
+    0xA4: (0x325F0000, 0xB25F0000),
+    0xB0: (0x61, 0x10065),
+    0xBC: (0x1030002, 0x1020902),
+    0xC4: (0x1030102, 0x1020A02),
+    0xCC: (0x0, 0x1),
+    0x350: (0x102, 0x100),  # select_mode 2 -> 0 (low byte)
+}
+SELECT_MODE_OFF = 0x350
+
+
+def verify(path):
+    d = open(path, "rb").read()
+    i = d.find(struct.pack("<II", 0xA11A, 0x1001))
+    if i < 0:
+        raise SystemExit(f"{path}: 12GB dram struct not found")
+    vals = struct.unpack_from("<%dI" % len(EXPECTED), d, i - 24)
+    if list(vals) != EXPECTED:
+        bad = [(n, hex(v), hex(e)) for n, v, e in
+               zip(range(len(EXPECTED)), vals, EXPECTED) if v != e]
+        raise SystemExit(f"{path}: DRAM mismatch: {bad}")
+    sm = struct.unpack_from("<I", d, SELECT_MODE_OFF)[0]
+    if sm & 0xFF != 0:
+        raise SystemExit(f"{path}: select_mode not 0 (word={hex(sm)})")
+    print(f"{path}: 12GB DRAM verified, select_mode=0")
+
+
+def main():
+    tools, blob = sys.argv[1], sys.argv[2]
+    sd = os.path.join(blob, "boot0_sdcard_orangepi4pro.fex")
+    sp = os.path.join(blob, "boot0_spinor_orangepi4pro.fex")
+    fex = os.path.join(blob, "sys_config_orangepi4pro_12gb.fex")
+    sd12 = os.path.join(blob, "boot0_sdcard_orangepi4pro_12gb.fex")
+    sp12 = os.path.join(blob, "boot0_spinor_orangepi4pro_12gb.fex")
+    bin12 = os.path.join(blob, "sys_config_orangepi4pro_12gb.bin")
+
+    # CRLF for Allwinner tools (work on a copy; keep tree file as-is).
+    with open(fex, "rb") as f:
+        raw = f.read().replace(b"\r\n", b"\n").replace(b"\n", b"\r\n")
+    tmpfex = os.path.join(blob, "_repack_tmp.fex")
+    with open(tmpfex, "wb") as f:
+        f.write(raw)
+    # NOTE: these Allwinner tools misbehave with absolute paths
+    # (update_boot0 silently skips select_mode); always use cwd=blob
+    # and relative file names.
+    subprocess.run(["script", "_repack_tmp.fex"],
+                   cwd=blob, check=True, stdout=subprocess.DEVNULL,
+                   env={**os.environ, "PATH": tools + os.pathsep +
+                        os.environ.get("PATH", "")})
+    os.rename(os.path.join(blob, "_repack_tmp.bin"), bin12)
+    os.remove(tmpfex)
+
+    # sdcard via Allwinner update_boot0 (updates arg1 in place; needs 3 args).
+    with open(sd, "rb") as f:
+        data = f.read()
+    with open(sd12, "wb") as f:
+        f.write(data)
+    subprocess.run(
+        ["update_boot0", os.path.basename(sd12),
+         os.path.basename(bin12), "_"],
+        cwd=blob, check=True, stdout=subprocess.DEVNULL,
+        env={**os.environ, "PATH": tools + os.pathsep +
+             os.environ.get("PATH", "")})
+    verify(sd12)
+
+    # spinor: manual patch (update_boot0 rejects this layout).
+    with open(sp, "rb") as f:
+        d = bytearray(f.read())
+    for off, (old, new) in SPINOR_CHANGES.items():
+        cur = struct.unpack_from("<I", d, off)[0]
+        if cur != old:
+            raise SystemExit(
+                f"spinor blob unexpected value at {hex(off)}: "
+                f"{hex(cur)} != expected {hex(old)}")
+        struct.pack_into("<I", d, off, new)
+    delta = sum(n - o for o, n in SPINOR_CHANGES.values()) & 0xFFFFFFFF
+    ck = struct.unpack_from("<I", d, 0xC)[0]
+    struct.pack_into("<I", d, 0xC, (ck + delta) & 0xFFFFFFFF)
+    with open(sp12, "wb") as f:
+        f.write(d)
+    verify(sp12)
+    print("12GB boot0 repack complete")
+
+
+if __name__ == "__main__":
+    main()
