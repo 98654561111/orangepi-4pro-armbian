@@ -1,1 +1,166 @@
-IyBPcmFuZ2UgUGkgNCBQcm8g4oCUIEFybWJpYW4gQnVpbGQgT3ZlcmxheSAoMTJHQiBFZGl0aW9uKQoKWyFbQnVpbGRdKGh0dHBzOi8vZ2l0aHViLmNvbS85ODY1NDU2MTExMS9vcmFuZ2VwaS00cHJvLWFybWJpYW4vYWN0aW9ucy93b3JrZmxvd3MvcmVsZWFzZS55bWwvYmFkZ2Uuc3ZnKV0oaHR0cHM6Ly9naXRodWIuY29tLzk4NjU0NTYxMTExL29yYW5nZXBpLTRwcm8tYXJtYmlhbi9hY3Rpb25zL3dvcmtmbG93cy9yZWxlYXNlLnltbCkKCkJ1aWxkIEFybWJpYW4gaW1hZ2VzIGZvciB0aGUgKipPcmFuZ2UgUGkgNCBQcm8qKiDigJQgaW5jbHVkaW5nIHRoZSAqKjEyR0IgUkFNIHZhcmlhbnQqKiDigJQgd2l0aCBtYWlubGluZSBMaW51eCBrZXJuZWwgb24gQWxsd2lubmVyIEE3MzMgKHN1bjYwaXcyKS4KCkZvcmtlZCBmcm9tIFtqb25hczUvb3JhbmdlcGktNHByby1hcm1iaWFuXShodHRwczovL2dpdGh1Yi5jb20vam9uYXM1L29yYW5nZXBpLTRwcm8tYXJtYmlhbikuCgojIyAxMkdCIFJBTSBGaXgKClRoZSB1cHN0cmVhbSBvdmVybGF5IG9ubHkgYm9vdHMgdGhlIDIvNC84LzE2R0IgdmFyaWFudHMuIFRoZSAxMkdCIG1vZGVsIGhhbmdzIGR1cmluZyBib290MCBEUkFNIGluaXRpYWxpemF0aW9uOiB0aGUgQlNQIGVuYWJsZXMgQURDIGF1dG8gRFJBTS1wcm9maWxlIHNlbGVjdGlvbiwgYnV0IG5vIDEyR0IgcHJvZmlsZSBleGlzdHMuCgpUaGlzIGZvcmsgZml4ZXMgaXQ6CgotIERSQU0gdGltaW5ncyB0cmFuc3BsYW50ZWQgZnJvbSB0aGUgKipSYWR4YSBDdWJpZSBBN0EqKiBGRVggKGBkcmFtX3BhcmEzYDogMTJHQiBMUEREUjUgQCAxODAwTUh6KS4gU2FtZSBBNzMzIFNvQzsgRERSIHBhcmFtZXRlcnMgdmVyaWZpZWQgaWRlbnRpY2FsIHRvIHRoZSBPcmFuZ2UgUGkgNCBQcm8gYm9hcmQuCi0gQURDL0dQSU8gYXV0by1zZWxlY3QgZGlzYWJsZWQgKGBzZWxlY3RfbW9kZT0wYCkg4oCUIHRoZSAxMkdCIGNvbmZpZyBpcyB1c2VkIGRpcmVjdGx5LCBubyBwcm9iaW5nLgotIEJvdGggYm9vdDAgYmxvYnMgKFNEIGNhcmQgKyBTUEkgTk9SKSByZXBhY2tlZCB3aXRoIHRoZSBmaXhlZCBjb25maWcuCgpUbyByZXByb2R1Y2UgdGhlIHJlcGFjayBmcm9tIHN0b2NrIGJsb2JzOgoKYGBgYmFzaApweXRob24zIHNjcmlwdHMvcmVwYWNrLWJvb3QwLTEyZ2IucHkgXAogIDxvcmFuZ2VwaS1idWlsZD4vZXh0ZXJuYWwvcGFja2FnZXMvcGFjay11Ym9vdC90b29scyBcCiAgPGFybWJpYW4tYnVpbGQ+L3BhY2thZ2VzL2Jsb2JzL3N1bnhpL3N1bjYwaXcyCmBgYAoKU2VlIGBzY3JpcHRzL3JlcGFjay1ib290MC0xMmdiLnB5YCBhbmQgYHNjcmlwdHMvYXBwbHktMTJnYi1kcmFtLnB5YCBmb3IgZGV0YWlscy4gKFRoZSBwcmVidWlsdCBibG9icyBhcmUgc3RvcmVkIGFzIGJhc2U2NCBjaHVua3MgYCouYjY0LnBhcnQqYCBiZWNhdXNlIHRoZSBHaXRIdWIgQVBJIHJlamVjdHMgcmF3IGJpbmFyaWVzOyBgc2NyaXB0cy9hcHBseS1vdmVybGF5LnNoYCByZWFzc2VtYmxlcyB0aGVtIGF0IGJ1aWxkIHRpbWUuKQoKIyMgSGFyZHdhcmUKCnwgQ29tcG9uZW50IHwgRGV0YWlscyB8CnwtLS0tLS0tLS0tLXwtLS0tLS0tLS18CnwgU29DIHwgQWxsd2lubmVyIEE3MzMg4oCUIDLDlyBDb3J0ZXgtQTc2ICsgNsOXIENvcnRleC1BNTUsIE1hbGkgQmlmcm9zdCBHUFUgfAp8IFJBTSB8IDIvNC84LyoqMTIqKi8xNiBHQiBMUEREUjRYL0xQRERSNSAoKioxMkdCIHN1cHBvcnRlZCBieSB0aGlzIGZvcmsqKikgfAp8IFN0b3JhZ2UgfCBlTU1DIChNTUMyLCA4LWJpdCksIG1pY3JvU0QgKE1NQzApLCBTUEkgTk9SIGZsYXNoICgxNk1CKSwgTlZNZSAoUENJZSB4MSBHZW4zKSB8CnwgRXRoZXJuZXQgfCBHaWdhYml0IChHTUFDMCwgUkdNSUksIFJUTDgyMTFGKSB8CnwgV2lGaS9CVCB8IEFJQzg4MDBEODAgKFNESU8gKyBVQVJUIEhDSSkgfAp8IFVTQiB8IDHDlyBVU0IzIFR5cGUtQyAoT1RHKSwgMsOXIFVTQjIgVHlwZS1BIChFSENJL09IQ0kpIHwKfCBQQ0llIHwgeDEgR2VuMyAoUkMgbW9kZSwgdmlhIGNvbWJvIFBIWSkgfAp8IERpc3BsYXkgfCBNSVBJIERTSSAoODAww5cxMjgwLCBHb29kaXggR1Q5MjcxIHRvdWNoc2NyZWVuKSB8CnwgQXVkaW8gfCBFUzgzODggY29kZWMgKEkyQyBAMHgxMCArIEkyUzQpLCAzLjVtbSBoZWFkcGhvbmUgamFjayB8CnwgUE1JQyB8IEFYUDgxOTEgKG1haW4gRENEQy9BTERPL0JMRE8vQ0xETy9ETERPL0VMRE8pICsgQVhQNTE1IChiYXR0ZXJ5L2NoYXJnaW5nKSB8CnwgU2VyaWFsIHwgVUFSVDAgZGVidWcgKDExNTIwMCksIFVBUlQxIEJUIEhDSSwgVUFSVDIgZXhwYW5zaW9uIHwKfCBMRURzIHwgR3JlZW4gc3RhdHVzIExFRCAoUEk4KSB8CgojIyBQcmUtYnVpbHQgSW1hZ2VzCgpObyBzdGF0aWMgcmVsZWFzZXMg4oCUIGltYWdlcyBhcmUgYnVpbHQgb24gZGVtYW5kIHZpYSBHaXRIdWIgQWN0aW9uczoKCjEuIE9wZW4gW0FjdGlvbnMg4oaSIEJ1aWxkIGFuZCBVcGxvYWQgUmVsZWFzZSBJbWFnZXNdKGh0dHBzOi8vZ2l0aHViLmNvbS85ODY1NDU2MTExMS9vcmFuZ2VwaS00cHJvLWFybWJpYW4vYWN0aW9ucy93b3JrZmxvd3MvcmVsZWFzZS55bWwpCjIuIENsaWNrICoqUnVuIHdvcmtmbG93KiosIHBpY2sgYSByZWxlYXNlIChgbm9ibGVgID0gVWJ1bnR1IDI0LjA0IExUUywgYHRyaXhpZWAgPSBEZWJpYW4gMTMsIOKApikKMy4gV2hlbiB0aGUgcnVuIGZpbmlzaGVzLCBkb3dubG9hZCB0aGUgYXJ0aWZhY3QgKGUuZy4gYE9yYW5nZXBpNHByby1ub2JsZS1kZXNrdG9wYCwgYC5pbWcueHpgIGluc2lkZSkKCkFsbCBpbWFnZXMgdGFyZ2V0IHRoZSAxMkdCIGJvYXJkIGFuZCB1c2UgdGhlIG1haW5saW5lIGtlcm5lbC4gRmxhc2ggdG8gU0QgY2FyZCB3aXRoIGBkZGAsIFtiYWxlbmFFdGNoZXJdKGh0dHBzOi8vZXRjaGVyLmJhbGVuYS5pby8pLCBvciBSYXNwYmVycnkgUGkgSW1hZ2VyLgoKIyMgQnVpbGRpbmcgWW91ciBPd24gSW1hZ2UKCiMjIyBQcmVyZXF1aXNpdGVzCgotIHg4Nl82NCBvciBhcm02NCBMaW51eCBob3N0IChEZWJpYW4vVWJ1bnR1IHJlY29tbWVuZGVkKQotIH4yNSBHQiBmcmVlIGRpc2sgc3BhY2UgKG1vcmUgZm9yIGRlc2t0b3AgYnVpbGRzKQotIEludGVybmV0IGNvbm5lY3Rpb24KCkluc3RhbGwgZGVwZW5kZW5jaWVzOgoKYGBgYmFzaApzdWRvIGFwdC1nZXQgdXBkYXRlCnN1ZG8gYXB0LWdldCBpbnN0YWxsIC15IGdpdCBnY2MgbWFrZSBiYyBiaXNvbiBmbGV4IGxpYnNzbC1kZXYgXAogICAgbGliYzYtZGV2LWFybTY0LWNyb3NzIGdjYy1hYXJjaDY0LWxpbnV4LWdudSBnKystYWFyY2g2NC1saW51eC1nbnUgXAogICAgcWVtdS11c2VyLXN0YXRpYyBiaW5mbXQtc3VwcG9ydCBkcGtnLWRldgojIEZvciBVLUJvb3QgeDg2LTY0IHRvb2xjaGFpbiBlbXVsYXRpb246CnN1ZG8gZHBrZyAtLWFkZC1hcmNoaXRlY3R1cmUgYW1kNjQKc3VkbyBhcHQtZ2V0IHVwZGF0ZQpzdWRvIGFwdC1nZXQgaW5zdGFsbCAteSBsaWJjNjphbWQ2NApgYGAKCkVuYWJsZSBiaW5mbXQgKGFsbG93cyBydW5uaW5nIHg4Ni02NCBVLUJvb3QgdG9vbHMgb24gYXJtNjQgaG9zdHMpOgoKYGBgYmFzaApzdWRvIHN5c3RlbWN0bCByZXN0YXJ0IHN5c3RlbWQtYmluZm10CmBgYAoKIyMjIFN0ZXAgMTogQ2xvbmUgQXJtYmlhbiBCdWlsZCBTeXN0ZW0KCmBgYGJhc2gKZ2l0IGNsb25lIC0tZGVwdGg9MSBodHRwczovL2dpdGh1Yi5jb20vYXJtYmlhbi9idWlsZC5naXQgYXJtYmlhbi1idWlsZApjZCBhcm1iaWFuLWJ1aWxkCmBgYAoKIyMjIFN0ZXAgMjogQ2xvbmUgVGhpcyBPdmVybGF5CgpgYGBiYXNoCmdpdCBjbG9uZSBodHRwczovL2dpdGh1Yi5jb20vOTg2NTQ1NjExMTEvb3JhbmdlcGktNHByby1hcm1iaWFuLmdpdCBvcmFuZ2VwaTRwcm8tb3ZlcmxheQpgYGAKCiMjIyBTdGVwIDM6IEFwcGx5IHRoZSBPdmVybGF5CgpgYGBiYXNoCi4vb3JhbmdlcGk0cHJvLW92ZXJsYXkvc2NyaXB0cy9hcHBseS1vdmVybGF5LnNoIC4KYGBgCgpUaGlzIGNvcGllcyB0aGUgYm9hcmQgY29uZmlnLCBrZXJuZWwgY29uZmlnL3BhdGNoLCBmaXJtd2FyZSwgYW5kIHRoZSAxMkdCIGJvb3QgYmxvYnMgKHJlYXNzZW1ibGVkIGZyb20gYmFzZTY0IGNodW5rcykgaW50byB0aGUgQXJtYmlhbiB0cmVlLgoKIyMjIFN0ZXAgNDogQnVpbGQKCioqRGVza3RvcCBpbWFnZSAoTm9ibGUgR05PTUUsIDEyR0IpOioqCgpgYGBiYXNoCi4vY29tcGlsZS5zaCBcCiAgICBCT0FSRD1vcmFuZ2VwaTRwcm8gXAogICAgQlJBTkNIPW5leHQgXAogICAgUkVMRUFTRT1ub2JsZSBcCiAgICBCVUlMRF9ERVNLVE9QPXllcyBcCiAgICBERVNLVE9QX0VOVklST05NRU5UPWdub21lIFwKICAgIERFU0tUT1BfRU5WSVJPTk1FTlRfQ09ORklHX05BTUU9Y29uZmlnX2Jhc2UgXAogICAgREVTS1RPUF9BUFBHUk9VUFNfU0VMRUNURUQ9ImJyb3dzZXJzIGVkaXRvcnMgbXVsdGltZWRpYSIgXAogICAgS0VSTkVMX0NPTkZJR1VSRT1ubyBcCiAgICBOT19IT1NUX1JFTEVBU0VfQ0hFQ0s9eWVzIFwKICAgIENPTVBSRVNTX09VVFBVVElNQUdFPW5vIFwKICAgIEJVSUxEX09QVD1pbWFnZQpgYGAKCioqU2VydmVyIGltYWdlIChOb2JsZSwgMTJHQik6KioKCmBgYGJhc2gKLi9jb21waWxlLnNoIFwKICAgIEJPQVJEPW9yYW5nZXBpNHBybyBcCiAgICBCUkFOQ0g9bmV4dCBcCiAgICBSRUxFQVNFPW5vYmxlIFwKICAgIEJVSUxEX0RFU0tUT1A9bm8gXAogICAgQlVJTERfTUlOSU1BTD15ZXMgXAogICAgS0VSTkVMX0NPTkZJR1VSRT1ubyBcCiAgICBOT19IT1NUX1JFTEVBU0VfQ0hFQ0s9eWVzIFwKICAgIENPTVBSRVNTX09VVFBVVElNQUdFPW5vIFwKICAgIEJVSUxEX09QVD1pbWFnZQpgYGAKCkltYWdlcyBhcmUgd3JpdHRlbiB0byBgb3V0cHV0L2ltYWdlcy9gLgoKIyMjIEJ1aWxkIE9wdGlvbnMgUmVmZXJlbmNlCgp8IE9wdGlvbiB8IERlc2NyaXB0aW9uIHwKfC0tLS0tLS0tfC0tLS0tLS0tLS0tLS18CnwgYEJPQVJEPW9yYW5nZXBpNHByb2AgfCBCb2FyZCBuYW1lIHwKfCBgQlJBTkNIPW5leHRgIHwgTWFpbmxpbmUga2VybmVsIChgY3VycmVudGAgPSB2ZW5kb3Iga2VybmVsKSB8CnwgYFJFTEVBU0U9bm9ibGVcfHRyaXhpZVx8Ym9va3dvcm1cfHBsdWNreVx8Zm9ya3lcfHJlc29sdXRlYCB8IERlYmlhbi9VYnVudHUgcmVsZWFzZSAoYHJlc29sdXRlYCA9IFVidW50dSAyNi4wNCkgfAp8IGBCVUlMRF9ERVNLVE9QPW5vXHx5ZXNgIHwgU2VydmVyIG9yIGRlc2t0b3AgaW1hZ2UgfAp8IGBCVUlMRF9NSU5JTUFMPXllc2AgfCBNaW5pbWFsIHNlcnZlciBpbWFnZSAoc21hbGxlciwgZmV3ZXIgcGFja2FnZXMpIHwKCiMjIFJlcG9zaXRvcnkgTGF5b3V0Cgp8IFBhdGggfCBDb250ZW50cyB8CnwtLS0tLS18LS0tLS0tLS0tLXwKfCBgY29uZmlnL2JvYXJkcy9vcmFuZ2VwaTRwcm8uY29uZmAgfCBCb2FyZCBkZWZpbml0aW9uIChwb2ludHMgYXQgMTJHQiBib290IGJsb2JzKSB8CnwgYGNvbmZpZy9ib290bG9hZGVyL2RyYW0tMTJnYi1wYXJhLmZleGAgfCAxMkdCIERSQU0gY29uZmlnIHNvdXJjZSB8CnwgYHBhY2thZ2VzL2Jsb2JzL3N1bnhpL3N1bjYwaXcyL2AgfCBCb290MCBibG9icyArIHBhdGNoZWQgc3lzX2NvbmZpZyAoMTJHQiBibG9icyBhcyBgLmI2NC5wYXJ0KmAgY2h1bmtzKSB8CnwgYHNjcmlwdHMvYXBwbHktb3ZlcmxheS5zaGAgfCBBcHBsaWVzIG92ZXJsYXkgdG8gQXJtYmlhbiB0cmVlIChyZWFzc2VtYmxlcyAxMkdCIGJsb2JzKSB8CnwgYHNjcmlwdHMvYXBwbHktMTJnYi1kcmFtLnB5YCB8IFBhdGNoZXMgc3lzX2NvbmZpZyBGRVggd2l0aCAxMkdCIERSQU0gYmxvY2sgfAp8IGBzY3JpcHRzL3JlcGFjay1ib290MC0xMmdiLnB5YCB8IFJlcGFja3Mgc3RvY2sgYm9vdDAgYmxvYnMgd2l0aCAxMkdCIGNvbmZpZyB8CnwgYHBhdGNoL2tlcm5lbC9zdW42MGl3Mi1uZXh0L2AgfCBLZXJuZWwgcGF0Y2hlcyB8CnwgYC5naXRodWIvd29ya2Zsb3dzL3JlbGVhc2UueW1sYCB8IENJOiBidWlsZCBpbWFnZXMgdmlhIHdvcmtmbG93X2Rpc3BhdGNoIHwKCiMjIENyZWRpdHMKCi0gT3JpZ2luYWwgb3ZlcmxheTogW2pvbmFzNV0oaHR0cHM6Ly9naXRodWIuY29tL2pvbmFzNSkgKFtidXkgaGltIGEgY29mZmVlXShodHRwczovL2J1eW1lYWNvZmZlZS5jb20vam9uYXM1KSkKLSAxMkdCIERSQU0gZml4OiBEUkFNIGNvbmZpZyBmcm9tIFtSYWR4YSBDdWJpZSBBN0FdKGh0dHBzOi8vZ2l0aHViLmNvbS9yYWR4YS9hbGx3aW5uZXItZGV2aWNlKSAoYGRldmljZS1hNzMzLXYxLjQuOGApCg==
+# Orange Pi 4 Pro — Armbian Build Overlay (12GB Edition)
+
+[![Build](https://github.com/98654561111/orangepi-4pro-armbian/actions/workflows/release.yml/badge.svg)](https://github.com/98654561111/orangepi-4pro-armbian/actions/workflows/release.yml)
+
+Build Armbian images for the **Orange Pi 4 Pro** — including the **12GB RAM variant** — with mainline Linux kernel on Allwinner A733 (sun60iw2).
+
+Forked from [jonas5/orangepi-4pro-armbian](https://github.com/jonas5/orangepi-4pro-armbian).
+
+## 12GB RAM Fix
+
+The upstream overlay only boots the 2/4/8/16GB variants. The 12GB model hangs during boot0 DRAM initialization: the BSP enables ADC auto DRAM-profile selection, but no 12GB profile exists.
+
+This fork fixes it:
+
+- DRAM timings transplanted from the **Radxa Cubie A7A** FEX (`dram_para3`: 12GB LPDDR5 @ 1800MHz). Same A733 SoC; DDR parameters verified identical to the Orange Pi 4 Pro board.
+- ADC/GPIO auto-select disabled (`select_mode=0`) — the 12GB config is used directly, no probing.
+- Both boot0 blobs (SD card + SPI NOR) repacked with the fixed config.
+
+To reproduce the repack from stock blobs:
+
+```bash
+python3 scripts/repack-boot0-12gb.py \
+  <orangepi-build>/external/packages/pack-uboot/tools \
+  <armbian-build>/packages/blobs/sunxi/sun60iw2
+```
+
+See `scripts/repack-boot0-12gb.py` and `scripts/apply-12gb-dram.py` for details. (The prebuilt blobs are stored as base64 chunks `*.b64.part*` because the GitHub API rejects raw binaries; `scripts/apply-overlay.sh` reassembles them at build time.)
+
+## Hardware
+
+| Component | Details |
+|-----------|---------|
+| SoC | Allwinner A733 — 2× Cortex-A76 + 6× Cortex-A55, Mali Bifrost GPU |
+| RAM | 2/4/8/**12**/16 GB LPDDR4X/LPDDR5 (**12GB supported by this fork**) |
+| Storage | eMMC (MMC2, 8-bit), microSD (MMC0), SPI NOR flash (16MB), NVMe (PCIe x1 Gen3) |
+| Ethernet | Gigabit (GMAC0, RGMII, RTL8211F) |
+| WiFi/BT | AIC8800D80 (SDIO + UART HCI) |
+| USB | 1× USB3 Type-C (OTG), 2× USB2 Type-A (EHCI/OHCI) |
+| PCIe | x1 Gen3 (RC mode, via combo PHY) |
+| Display | MIPI DSI (800×1280, Goodix GT9271 touchscreen) |
+| Audio | ES8388 codec (I2C @0x10 + I2S4), 3.5mm headphone jack |
+| PMIC | AXP8191 (main DCDC/ALDO/BLDO/CLDO/DLDO/ELDO) + AXP515 (battery/charging) |
+| Serial | UART0 debug (115200), UART1 BT HCI, UART2 expansion |
+| LEDs | Green status LED (PI8) |
+
+## Pre-built Images
+
+No static releases — images are built on demand via GitHub Actions:
+
+1. Open [Actions → Build and Upload Release Images](https://github.com/98654561111/orangepi-4pro-armbian/actions/workflows/release.yml)
+2. Click **Run workflow**, pick a release (`noble` = Ubuntu 24.04 LTS, `trixie` = Debian 13, …)
+3. When the run finishes, download the artifact (e.g. `Orangepi4pro-noble-desktop`, `.img.xz` inside)
+
+All images target the 12GB board and use the mainline kernel. Flash to SD card with `dd`, [balenaEtcher](https://etcher.balena.io/), or Raspberry Pi Imager.
+
+## Building Your Own Image
+
+### Prerequisites
+
+- x86_64 or arm64 Linux host (Debian/Ubuntu recommended)
+- ~25 GB free disk space (more for desktop builds)
+- Internet connection
+
+Install dependencies:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y git gcc make bc bison flex libssl-dev \
+    libc6-dev-arm64-cross gcc-aarch64-linux-gnu g++-aarch64-linux-gnu \
+    qemu-user-static binfmt-support dpkg-dev
+# For U-Boot x86-64 toolchain emulation:
+sudo dpkg --add-architecture amd64
+sudo apt-get update
+sudo apt-get install -y libc6:amd64
+```
+
+Enable binfmt (allows running x86-64 U-Boot tools on arm64 hosts):
+
+```bash
+sudo systemctl restart systemd-binfmt
+```
+
+### Step 1: Clone Armbian Build System
+
+```bash
+git clone --depth=1 https://github.com/armbian/build.git armbian-build
+cd armbian-build
+```
+
+### Step 2: Clone This Overlay
+
+```bash
+git clone https://github.com/98654561111/orangepi-4pro-armbian.git orangepi4pro-overlay
+```
+
+### Step 3: Apply the Overlay
+
+```bash
+./orangepi4pro-overlay/scripts/apply-overlay.sh .
+```
+
+This copies the board config, kernel config/patch, firmware, and the 12GB boot blobs (reassembled from base64 chunks) into the Armbian tree.
+
+### Step 4: Build
+
+**Desktop image (Noble GNOME, 12GB):**
+
+```bash
+./compile.sh \
+    BOARD=orangepi4pro \
+    BRANCH=next \
+    RELEASE=noble \
+    BUILD_DESKTOP=yes \
+    DESKTOP_ENVIRONMENT=gnome \
+    DESKTOP_ENVIRONMENT_CONFIG_NAME=config_base \
+    DESKTOP_APPGROUPS_SELECTED="browsers editors multimedia" \
+    KERNEL_CONFIGURE=no \
+    NO_HOST_RELEASE_CHECK=yes \
+    COMPRESS_OUTPUTIMAGE=no \
+    BUILD_OPT=image
+```
+
+**Server image (Noble, 12GB):**
+
+```bash
+./compile.sh \
+    BOARD=orangepi4pro \
+    BRANCH=next \
+    RELEASE=noble \
+    BUILD_DESKTOP=no \
+    BUILD_MINIMAL=yes \
+    KERNEL_CONFIGURE=no \
+    NO_HOST_RELEASE_CHECK=yes \
+    COMPRESS_OUTPUTIMAGE=no \
+    BUILD_OPT=image
+```
+
+Images are written to `output/images/`.
+
+### Build Options Reference
+
+| Option | Description |
+|--------|-------------|
+| `BOARD=orangepi4pro` | Board name |
+| `BRANCH=next` | Mainline kernel (`current` = vendor kernel) |
+| `RELEASE=noble\|trixie\|bookworm\|plucky\|forky\|resolute` | Debian/Ubuntu release (`resolute` = Ubuntu 26.04) |
+| `BUILD_DESKTOP=no\|yes` | Server or desktop image |
+| `BUILD_MINIMAL=yes` | Minimal server image (smaller, fewer packages) |
+
+## Repository Layout
+
+| Path | Contents |
+|------|----------|
+| `config/boards/orangepi4pro.conf` | Board definition (points at 12GB boot blobs) |
+| `config/bootloader/dram-12gb-para.fex` | 12GB DRAM config source |
+| `packages/blobs/sunxi/sun60iw2/` | Boot0 blobs + patched sys_config (12GB blobs as `.b64.part*` chunks) |
+| `scripts/apply-overlay.sh` | Applies overlay to Armbian tree (reassembles 12GB blobs) |
+| `scripts/apply-12gb-dram.py` | Patches sys_config FEX with 12GB DRAM block |
+| `scripts/repack-boot0-12gb.py` | Repacks stock boot0 blobs with 12GB config |
+| `patch/kernel/sun60iw2-next/` | Kernel patches |
+| `.github/workflows/release.yml` | CI: build images via workflow_dispatch |
+
+## Credits
+
+- Original overlay: [jonas5](https://github.com/jonas5) ([buy him a coffee](https://buymeacoffee.com/jonas5))
+- 12GB DRAM fix: DRAM config from [Radxa Cubie A7A](https://github.com/radxa/allwinner-device) (`device-a733-v1.4.8`)
