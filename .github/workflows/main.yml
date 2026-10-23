@@ -1,0 +1,167 @@
+name: Build Arch Linux ARM for OPI 4 Pro 12GB
+
+# 在 ubuntu-24.04-arm runner 上原生編譯 bzbk/orangepi-4pro-arch，
+# 最後把 boot0 換成已驗證的 12GB LPDDR5 版本。
+#
+# 使用方式：把這個檔案放到 jonas5/orangepi-4pro-armbian 的
+# .github/workflows/ 目錄 —— 注意：GitHub App 沒有 Workflows 權限，
+# 必須在網頁上手動新增（repo 頁面 → Add file → Create new file，
+# 檔名填 .github/workflows/build-arch-4pro-12gb.yml，貼上內容後 Commit）。
+# 之後到 Actions 頁籤選這個 workflow → Run workflow。
+#
+# 流程說明：
+#   1-5. 照 bzbk 的 BUILD.md：00 裝依賴 → 10 抓 orangepi-build(已 pin commit，
+#        含 native-arm64 patch) → 20 編 vendor U-Boot + kernel 6.6.98-sun60iw2
+#   6.   檢查 deb 產物（dtb 名稱、kernel 版本），有問題早點炸，不要浪費兩小時
+#   7.   30-make-arch-rootfs.sh：抓 ALARM aarch64 rootfs，pacman 裝基礎系統
+#   8.   補上 bzbk 腳本沒做的三件事：
+#        - 把 kernel deb 的 /lib/modules 裝進 rootfs（否則 mkinitcpio 做不出來，
+#          開機後也沒有 WiFi/乙太網路驅動）
+#        - mkinitcpio 設 COMPRESSION="cat"（不內壓縮），外層再由組裝腳本 gzip，
+#          保證 uInitrd 是 U-Boot 吃得下的 gzip cpio（BUILD.md 已知坑 #2）
+#        - 注入 aic8800d80 WiFi 韌體（repo 內 firmware/ 目錄）
+#        - 放入官方布局的 boot.cmd / boot.scr（mkimage -A arm -T script，
+#          來源 = orangepi-build 的 boot-sun60iw2.cmd）與 orangepiEnv.txt
+#         （來源 = orangepi-build 的 bootenv/sun60iw2.txt）
+#        - dtb 放雙檔名（有/無 dash），cover U-Boot fdtfile 的兩種可能
+#   9.   40-assemble-image.sh：組 MBR image（partition @LBA 65536，
+#        boot0 @8KiB，boot_package @16400KiB）
+#   10.  把 image 裡的 boot0（8GB 版）換成 12GB 版，重新算 sha256
+#   11.  上傳 artifact
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Arch Linux ARM (12GB)
+    runs-on: ubuntu-24.04-arm
+    timeout-minutes: 360
+    steps:
+      - name: Checkout overlay repo（12GB boot0＋韌體）
+        uses: actions/checkout@v4
+        with:
+          path: overlay-repo
+
+      - name: Free disk space
+        run: |
+          sudo rm -rf /usr/share/dotnet /usr/local/lib/android /opt/ghc \
+            /opt/hostedtoolcache/CodeQL 2>/dev/null || true
+          sudo docker image prune -af 2>/dev/null || true
+          df -h /
+
+      - name: Clone bzbk/orangepi-4pro-arch（pin commit）
+        run: |
+          git clone https://github.com/bzbk/orangepi-4pro-arch.git arch-build
+          cd arch-build
+          git checkout 4f926871f665c88c777227e11ec39f45fd9273fd
+          git log --oneline -1
+
+      - name: Install build dependencies
+        run: |
+          sudo ./arch-build/scripts/00-setup-builder.sh
+          sudo apt-get install -y patch
+
+      - name: Fetch orangepi-build + native-arm64 patch
+        run: ./arch-build/scripts/10-fetch-build.sh
+
+      - name: Build vendor U-Boot + kernel
+        run: ./arch-build/scripts/20-build-kernel-uboot.sh
+
+      - name: Verify deb artifacts（fail fast）
+        run: |
+          set -e
+          DEBS="$GITHUB_WORKSPACE/arch-build/orangepi-build/output/debs"
+          ls -lh "$DEBS"
+          rm -rf /tmp/debcheck && mkdir -p /tmp/debcheck
+          dpkg-deb -x "$DEBS"/linux-dtb-current-sun60iw2_*.deb /tmp/debcheck
+          echo "--- dtb files in deb:"
+          find /tmp/debcheck -name '*.dtb' | sed 's|.*/||' | sort
+          test -n "$(find /tmp/debcheck -name 'sun60i-a733-orangepi-4pro.dtb')" \
+            || { echo "ERROR: expected dtb sun60i-a733-orangepi-4pro.dtb not in deb"; exit 1; }
+          rm -rf /tmp/kcheck && mkdir -p /tmp/kcheck
+          dpkg-deb -x "$DEBS"/linux-image-current-sun60iw2_*.deb /tmp/kcheck
+          echo "--- kernel modules version:"
+          ls /tmp/kcheck/lib/modules/ 2>/dev/null || ls /tmp/kcheck/usr/lib/modules/
+          test -d /tmp/kcheck/lib/modules/6.6.98-sun60iw2 -o -d /tmp/kcheck/usr/lib/modules/6.6.98-sun60iw2 \
+            || { echo "ERROR: kernel version is not 6.6.98-sun60iw2, assemble script hardcodes KVER"; exit 1; }
+          echo "--- u-boot DEFAULT_FDT_FILE (diagnostic):"
+          grep -rh "CONFIG_DEFAULT_FDT_FILE" \
+            "$GITHUB_WORKSPACE/arch-build/orangepi-build/u-boot/v2018.05-sun60iw2/.config" 2>/dev/null \
+            || echo "(not set in u-boot .config)"
+
+      - name: Make Arch rootfs
+        run: sudo ./arch-build/scripts/30-make-arch-rootfs.sh
+        env:
+          MIRROR: https://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz
+
+      - name: Customize rootfs for 4 Pro（補 bzbk 腳本缺的三步）
+        run: |
+          set -e
+          ROOTFS="$GITHUB_WORKSPACE/arch-build/rootfs"
+          OB="$GITHUB_WORKSPACE/arch-build/orangepi-build"
+          DEBS="$OB/output/debs"
+
+          # 1) kernel modules 進 rootfs（mkinitcpio 和開機後的驅動都需要）
+          rm -rf /tmp/kdeb && mkdir -p /tmp/kdeb
+          dpkg-deb -x "$DEBS"/linux-image-current-sun60iw2_*.deb /tmp/kdeb
+          sudo mkdir -p "$ROOTFS/usr/lib/modules"
+          [ -d /tmp/kdeb/lib/modules ] && \
+            sudo cp -a /tmp/kdeb/lib/modules/. "$ROOTFS/usr/lib/modules/"
+          [ -d /tmp/kdeb/usr/lib/modules ] && \
+            sudo cp -a /tmp/kdeb/usr/lib/modules/. "$ROOTFS/usr/lib/modules/"
+          echo "modules installed:"; ls "$ROOTFS/usr/lib/modules"
+
+          # 2) mkinitcpio 不內壓縮（外層由組裝腳本 gzip，保證 U-Boot 吃得下）
+          sudo sed -i 's/^#*COMPRESSION=.*/COMPRESSION="cat"/' "$ROOTFS/etc/mkinitcpio.conf"
+          grep '^COMPRESSION' "$ROOTFS/etc/mkinitcpio.conf"
+
+          # 3) aic8800d80 WiFi 韌體
+          sudo mkdir -p "$ROOTFS/lib/firmware/aic8800d80"
+          sudo cp -f "$GITHUB_WORKSPACE/overlay-repo/firmware/aic8800d80/"* \
+            "$ROOTFS/lib/firmware/aic8800d80/"
+          ls "$ROOTFS/lib/firmware/aic8800d80" | head -5
+
+          # 4) 官方布局的 boot.cmd / boot.scr / orangepiEnv.txt
+          sudo cp -f "$OB/external/config/bootscripts/boot-sun60iw2.cmd" /tmp/boot.cmd
+          sudo mkimage -C none -A arm -T script -d /tmp/boot.cmd /tmp/boot.scr
+          sudo cp -f /tmp/boot.cmd /tmp/boot.scr "$ROOTFS/boot/"
+          sudo cp -f "$OB/external/config/bootenv/sun60iw2.txt" "$ROOTFS/boot/orangepiEnv.txt"
+          ls -l "$ROOTFS/boot/"
+
+          # 5) dtb 雙檔名（有/無 dash），cover fdtfile 的兩種可能
+          rm -rf /tmp/dtbdeb && mkdir -p /tmp/dtbdeb
+          dpkg-deb -x "$DEBS"/linux-dtb-current-sun60iw2_*.deb /tmp/dtbdeb
+          REALDTB=$(find /tmp/dtbdeb -name 'sun60i-a733-orangepi-4pro.dtb' | head -1)
+          sudo mkdir -p "$ROOTFS/boot/dtb/allwinner"
+          sudo cp -f "$REALDTB" "$ROOTFS/boot/dtb/allwinner/sun60i-a733-orangepi-4pro.dtb"
+          sudo cp -f "$REALDTB" "$ROOTFS/boot/dtb/allwinner/sun60i-a733-orangepi-4-pro.dtb"
+          ls -l "$ROOTFS/boot/dtb/allwinner/"
+
+      - name: Assemble image
+        run: sudo ./arch-build/scripts/40-assemble-image.sh
+
+      - name: Swap in 12GB boot0
+        run: |
+          set -e
+          cd overlay-repo/packages/blobs/sunxi/sun60iw2
+          for p in boot0_sdcard_orangepi4pro_12gb.fex.b64.part0*; do base64 -d "$p"; done > /tmp/boot0_12gb_sdcard.fex
+          SZ=$(stat -c%s /tmp/boot0_12gb_sdcard.fex)
+          echo "12GB boot0 size: $SZ bytes"
+          [ "$SZ" = "245760" ] || { echo "unexpected boot0 size, abort"; exit 1; }
+          head -c 16 /tmp/boot0_12gb_sdcard.fex | od -A x -t x1z | head -1
+          IMG="$GITHUB_WORKSPACE/arch-build/output/arch-4pro.img"
+          sudo dd if=/tmp/boot0_12gb_sdcard.fex of="$IMG" bs=1024 seek=8 conv=fsync,notrunc status=none
+          cd "$GITHUB_WORKSPACE/arch-build/output"
+          sudo mv arch-4pro.img arch-4pro-12gb.img
+          sudo sha256sum arch-4pro-12gb.img | sudo tee arch-4pro-12gb.img.sha256
+          sudo chown -R "$(id -u -n):$(id -g -n)" .
+          ls -lh
+          cat arch-4pro-12gb.img.sha256
+
+      - name: Upload image
+        uses: actions/upload-artifact@v4
+        with:
+          name: orangepi4pro-12gb-arch
+          path: arch-build/output/
+          if-no-files-found: error
