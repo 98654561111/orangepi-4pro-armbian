@@ -1,1 +1,68 @@
-IyEvdXNyL2Jpbi9lbnYgcHl0aG9uMwoiIiJGb3JjZSAxMkdCIG1hbnVhbCBEUkFNIGluaXQgaW4gYW4gQWxsd2lubmVyIHN5c19jb25maWcuZmV4LgoKLSBSZXBsYWNlcyB0aGUgW2RyYW1fcGFyYV0gc2VjdGlvbiB3aXRoIHRoZSB0ZXN0ZWQgMTJHQiBMUEREUjUgYmxvY2sKICAoZnJvbSBSYWR4YSBDdWJpZSBBN0EsIGNvbmZpZ3MvY3ViaWVfYTdhL3N5c19jb25maWcuZmV4IFtkcmFtX3BhcmEzXSkuCi0gU2V0cyBzZWxlY3RfbW9kZSA9IDAgaW4gW2RyYW1fc2VsZWN0X3BhcmFdIChkaXNhYmxlIEdQQURDL0dQSU8KICBhdXRvIERSQU0gcHJvZmlsZSBzZWxlY3Rpb24sIGluaXQgMTJHQiBtYW51YWxseSkuCgpVc2FnZTogYXBwbHktMTJnYi1kcmFtLnB5IDxzeXNfY29uZmlnLmZleD4gPGRyYW0tMTJnYi1wYXJhLmZleD4KRWRpdHMgdGhlIGZleCBmaWxlIGluIHBsYWNlLiBJZGVtcG90ZW50LgoiIiIKaW1wb3J0IHJlCmltcG9ydCBzeXMKCgpkZWYgcmVwbGFjZV9zZWN0aW9uKHRleHQ6IHN0ciwgbmFtZTogc3RyLCBuZXdfYm9keTogc3RyKSAtPiBzdHI6CiAgICAjIE1hdGNoICJbbmFtZV0iIC4uLiB1cCB0byAobm90IGluY2x1ZGluZykgdGhlIG5leHQgc2VjdGlvbiBoZWFkZXIgb3IgRU9GLgogICAgcGF0ID0gcmUuY29tcGlsZSgKICAgICAgICByIig/bSleXFsiICsgcmUuZXNjYXBlKG5hbWUpICsgciJcXVteXG5dKlxuKC4qPykoPz1eXFt8XFopIiwgcmUuRE9UQUxMCiAgICApCiAgICBtID0gcGF0LnNlYXJjaCh0ZXh0KQogICAgaWYgbm90IG06CiAgICAgICAgcmFpc2UgU3lzdGVtRXhpdChmInNlY3Rpb24gW3tuYW1lfV0gbm90IGZvdW5kIGluIGZleCIpCiAgICByZXR1cm4gdGV4dFs6IG0uc3RhcnQoKV0gKyBmIlt7bmFtZX1dXG4iICsgbmV3X2JvZHkgKyB0ZXh0W20uZW5kKCk6XQoKCmRlZiBtYWluKCkgLT4gTm9uZToKICAgIGZleF9wYXRoLCBwYXJhX3BhdGggPSBzeXMuYXJndlsxXSwgc3lzLmFyZ3ZbMl0KICAgIHdpdGggb3BlbihmZXhfcGF0aCwgZW5jb2Rpbmc9InV0Zi04IiwgZXJyb3JzPSJyZXBsYWNlIikgYXMgZjoKICAgICAgICB0ZXh0ID0gZi5yZWFkKCkKICAgIHdpdGggb3BlbihwYXJhX3BhdGgsIGVuY29kaW5nPSJ1dGYtOCIpIGFzIGY6CiAgICAgICAgcGFyYV9ibG9jayA9IGYucmVhZCgpCiAgICAjIFN0cmlwIHRoZSAiW2RyYW1fcGFyYV0iIGhlYWRlciBsaW5lIGZyb20gdGhlIGJsb2NrIGZpbGU7IHdlIGFkZCBvdXIgb3duLgogICAgYm9keSA9IHJlLnN1YihyIig/bSleXFtkcmFtX3BhcmFcXVteXG5dKlxuIiwgIiIsIHBhcmFfYmxvY2ssIGNvdW50PTEpCiAgICBpZiBub3QgYm9keS5zdHJpcCgpOgogICAgICAgIHJhaXNlIFN5c3RlbUV4aXQoImRyYW0gcGFyYSBibG9jayBpcyBlbXB0eSIpCiAgICBpZiBub3QgYm9keS5lbmRzd2l0aCgiXG4iKToKICAgICAgICBib2R5ICs9ICJcbiIKCiAgICB0ZXh0ID0gcmVwbGFjZV9zZWN0aW9uKHRleHQsICJkcmFtX3BhcmEiLCBib2R5KQoKICAgICMgRGlzYWJsZSBhdXRvIERSQU0gcHJvZmlsZSBzZWxlY3Rpb246IHNlbGVjdF9tb2RlID0gMAogICAgZGVmIGZpeF9zZWxlY3QobTogcmUuTWF0Y2gpIC0+IHN0cjoKICAgICAgICBoZWFkZXIsIHNlY19ib2R5ID0gbS5ncm91cCgxKSwgbS5ncm91cCgyKQogICAgICAgIHNlY19ib2R5MiwgbiA9IHJlLnN1Ym4oCiAgICAgICAgICAgIHIiKD9tKV5zZWxlY3RfbW9kZVxzKj0uKiQiLCAic2VsZWN0X21vZGVcdD0gMCIsIHNlY19ib2R5CiAgICAgICAgKQogICAgICAgIGlmIG4gPT0gMDoKICAgICAgICAgICAgc2VjX2JvZHkyID0gInNlbGVjdF9tb2RlXHQ9IDBcbiIgKyBzZWNfYm9keQogICAgICAgIHJldHVybiBoZWFkZXIgKyBzZWNfYm9keTIKCiAgICB0ZXh0LCBuID0gcmUuc3VibigKICAgICAgICByIig/bSkoXlxbZHJhbV9zZWxlY3RfcGFyYVxdW15cbl0qXG4pKC4qPykoPz1eXFt8XFopIiwKICAgICAgICBmaXhfc2VsZWN0LAogICAgICAgIHRleHQsCiAgICAgICAgY291bnQ9MSwKICAgICAgICBmbGFncz1yZS5ET1RBTEwsCiAgICApCiAgICBpZiBuID09IDA6CiAgICAgICAgcmFpc2UgU3lzdGVtRXhpdCgic2VjdGlvbiBbZHJhbV9zZWxlY3RfcGFyYV0gbm90IGZvdW5kIGluIGZleCIpCgogICAgd2l0aCBvcGVuKGZleF9wYXRoLCAidyIsIGVuY29kaW5nPSJ1dGYtOCIpIGFzIGY6CiAgICAgICAgZi53cml0ZSh0ZXh0KQogICAgcHJpbnQoZiJwYXRjaGVkIHtmZXhfcGF0aH06IFtkcmFtX3BhcmFdPTEyR0IgbWFudWFsLCBzZWxlY3RfbW9kZT0wIikKCgppZiBfX25hbWVfXyA9PSAiX19tYWluX18iOgogICAgbWFpbigpCg==
+#!/usr/bin/env python3
+"""Force 12GB manual DRAM init in an Allwinner sys_config.fex.
+
+- Replaces the [dram_para] section with the tested 12GB LPDDR5 block
+  (from Radxa Cubie A7A, configs/cubie_a7a/sys_config.fex [dram_para3]).
+- Sets select_mode = 0 in [dram_select_para] (disable GPADC/GPIO
+  auto DRAM profile selection, init 12GB manually).
+
+Usage: apply-12gb-dram.py <sys_config.fex> <dram-12gb-para.fex>
+Edits the fex file in place. Idempotent.
+"""
+import re
+import sys
+
+
+def replace_section(text: str, name: str, new_body: str) -> str:
+    # Match "[name]" ... up to (not including) the next section header or EOF.
+    pat = re.compile(
+        r"(?m)^\[" + re.escape(name) + r"\][^\n]*\n(.*?)(?=^\[|\Z)", re.DOTALL
+    )
+    m = pat.search(text)
+    if not m:
+        raise SystemExit(f"section [{name}] not found in fex")
+    return text[: m.start()] + f"[{name}]\n" + new_body + text[m.end():]
+
+
+def main() -> None:
+    fex_path, para_path = sys.argv[1], sys.argv[2]
+    with open(fex_path, encoding="utf-8", errors="replace") as f:
+        text = f.read()
+    with open(para_path, encoding="utf-8") as f:
+        para_block = f.read()
+    # Strip the "[dram_para]" header line from the block file; we add our own.
+    body = re.sub(r"(?m)^\[dram_para\][^\n]*\n", "", para_block, count=1)
+    if not body.strip():
+        raise SystemExit("dram para block is empty")
+    if not body.endswith("\n"):
+        body += "\n"
+
+    text = replace_section(text, "dram_para", body)
+
+    # Disable auto DRAM profile selection: select_mode = 0
+    def fix_select(m: re.Match) -> str:
+        header, sec_body = m.group(1), m.group(2)
+        sec_body2, n = re.subn(
+            r"(?m)^select_mode\s*=.*$", "select_mode\t= 0", sec_body
+        )
+        if n == 0:
+            sec_body2 = "select_mode\t= 0\n" + sec_body
+        return header + sec_body2
+
+    text, n = re.subn(
+        r"(?m)(^\[dram_select_para\][^\n]*\n)(.*?)(?=^\[|\Z)",
+        fix_select,
+        text,
+        count=1,
+        flags=re.DOTALL,
+    )
+    if n == 0:
+        raise SystemExit("section [dram_select_para] not found in fex")
+
+    with open(fex_path, "w", encoding="utf-8") as f:
+        f.write(text)
+    print(f"patched {fex_path}: [dram_para]=12GB manual, select_mode=0")
+
+
+if __name__ == "__main__":
+    main()
