@@ -1,1 +1,95 @@
-IyEvYmluL2Jhc2gKIyBhcHBseS1vdmVybGF5LnNoIOKAlCBBcHBseSBPcmFuZ2UgUGkgNCBQcm8gb3ZlcmxheSB0byBBcm1iaWFuIGJ1aWxkIHRyZWUKIwojIFVzYWdlOgojICAgLi9zY3JpcHRzL2FwcGx5LW92ZXJsYXkuc2ggL3BhdGgvdG8vYXJtYmlhbi1idWlsZAojCiMgU3VwcG9ydHMgYm90aCBsZWdhY3kgKGV4dGVybmFsLykgYW5kIG5ldyAoZmxhdCkgQXJtYmlhbiBidWlsZCBsYXlvdXRzLgoKc2V0IC1ldW8gcGlwZWZhaWwKCk9WRVJMQVlfRElSPSIkKGNkICIkKGRpcm5hbWUgIiQwIikvLi4iICYmIHB3ZCkiCkFSTUJJQU5fRElSPSIkezE6P1VzYWdlOiAkMCAvcGF0aC90by9hcm1iaWFuLWJ1aWxkfSIKCiMgRGV0ZWN0IGxheW91dDogbmV3IChmbGF0KSBvciBsZWdhY3kgKGV4dGVybmFsLykKaWYgW1sgLWQgIiRBUk1CSUFOX0RJUi9jb25maWcvYm9hcmRzIiBdXTsgdGhlbgogICAgTEFZT1VUPSJmbGF0IgogICAgQ0ZHRElSPSIkQVJNQklBTl9ESVIvY29uZmlnIgogICAgUEFUQ0hESVI9IiRBUk1CSUFOX0RJUi9wYXRjaCIKZWxpZiBbWyAtZCAiJEFSTUJJQU5fRElSL2V4dGVybmFsL2NvbmZpZyIgXV07IHRoZW4KICAgIExBWU9VVD0iZXh0ZXJuYWwiCiAgICBDRkdESVI9IiRBUk1CSUFOX0RJUi9leHRlcm5hbC9jb25maWciCiAgICBQQVRDSERJUj0iJEFSTUJJQU5fRElSL2V4dGVybmFsL3BhdGNoIgplbHNlCiAgICBlY2hvICJFcnJvcjogJEFSTUJJQU5fRElSIGRvZXMgbm90IGxvb2sgbGlrZSBhbiBBcm1iaWFuIGJ1aWxkIHRyZWUiCiAgICBlY2hvICJFeHBlY3RlZCBjb25maWcvYm9hcmRzLyBvciBleHRlcm5hbC9jb25maWcvYm9hcmRzLyIKICAgIGV4aXQgMQpmaQoKZWNobyAiQXBwbHlpbmcgT3JhbmdlIFBpIDQgUHJvIG92ZXJsYXkgdG8gJEFSTUJJQU5fRElSIChsYXlvdXQ6ICRMQVlPVVQpIgoKIyBCb2FyZCBkZWZpbml0aW9uCmVjaG8gIiAgQm9hcmQgZGVmaW5pdGlvbiDihpIgJENGR0RJUi9ib2FyZHMvb3JhbmdlcGk0cHJvLmNvbmYiCm1rZGlyIC1wICIkQ0ZHRElSL2JvYXJkcyIKY3AgIiRPVkVSTEFZX0RJUi9jb25maWcvYm9hcmRzL29yYW5nZXBpNHByby5jb25mIiBcCiAgICIkQ0ZHRElSL2JvYXJkcy9vcmFuZ2VwaTRwcm8uY29uZiIKCiMgQm9vdHNjcmlwdHMKZWNobyAiICBCb290c2NyaXB0cyDihpIgJENGR0RJUi9ib290c2NyaXB0cy8iCm1rZGlyIC1wICIkQ0ZHRElSL2Jvb3RzY3JpcHRzIgppZiBbWyAtZCAiJE9WRVJMQVlfRElSL2NvbmZpZy9ib290c2NyaXB0cyIgXV07IHRoZW4KICAgIGNwIC1yICIkT1ZFUkxBWV9ESVIvY29uZmlnL2Jvb3RzY3JpcHRzLyIqICIkQ0ZHRElSL2Jvb3RzY3JpcHRzLyIKZmkKCiMgS2VybmVsIGNvbmZpZwplY2hvICIgIEtlcm5lbCBjb25maWcg4oaSICRDRkdESVIva2VybmVsL2xpbnV4LXN1bjYwaXcyLW5leHQtYTczMy5jb25maWciCm1rZGlyIC1wICIkQ0ZHRElSL2tlcm5lbCIKY3AgIiRPVkVSTEFZX0RJUi9jb25maWcva2VybmVsL2xpbnV4LXN1bjYwaXcyLW5leHQtYTczMy5jb25maWciIFwKICAgIiRDRkdESVIva2VybmVsLyIKCiMgS2VybmVsIHBhdGNoCmVjaG8gIiAgS2VybmVsIHBhdGNoIOKGkiAkUEFUQ0hESVIva2VybmVsL3N1bjYwaXcyLW5leHQvIgpta2RpciAtcCAiJFBBVENIRElSL2tlcm5lbC9zdW42MGl3Mi1uZXh0IgpjcCAiJE9WRVJMQVlfRElSL3BhdGNoL2tlcm5lbC9zdW42MGl3Mi1uZXh0L29waTRwcm8tNy4xLjUucGF0Y2giIFwKICAgIiRQQVRDSERJUi9rZXJuZWwvc3VuNjBpdzItbmV4dC8iCgojIEZpcm13YXJlIChuZXcgbGF5b3V0IG9ubHkg4oCUIGxlZ2FjeSB1c2VzIGNhY2hlLykKaWYgW1sgIiRMQVlPVVQiID09ICJmbGF0IiBdXTsgdGhlbgogICAgZWNobyAiICBGaXJtd2FyZSDihpIgcGFja2FnZXMvZmlybXdhcmUvIgogICAgbWtkaXIgLXAgIiRBUk1CSUFOX0RJUi9wYWNrYWdlcy9maXJtd2FyZSIKICAgIGNwIC1yICIkT1ZFUkxBWV9ESVIvZmlybXdhcmUvIiogXAogICAgICAgIiRBUk1CSUFOX0RJUi9wYWNrYWdlcy9maXJtd2FyZS8iCmVsc2UKICAgIGVjaG8gIiAgRmlybXdhcmUg4oaSIGV4dGVybmFsL2NhY2hlL3NvdXJjZXMvZmlybXdhcmUvIgogICAgbWtkaXIgLXAgIiRBUk1CSUFOX0RJUi9leHRlcm5hbC9jYWNoZS9zb3VyY2VzL2Zpcm13YXJlIgogICAgY3AgLXIgIiRPVkVSTEFZX0RJUi9maXJtd2FyZS8iKiBcCiAgICAgICAiJEFSTUJJQU5fRElSL2V4dGVybmFsL2NhY2hlL3NvdXJjZXMvZmlybXdhcmUvIgpmaQoKIyAxMkdCIERSQU0gZml4IGZpbGVzOiBwcmVidWlsdCBib290IGJsb2JzICsgcGF0Y2hlZCBzeXNfY29uZmlnCiMgKERSQU0gY29uZmlnIHRyYW5zcGxhbnRlZCBmcm9tIFJhZHhhIEN1YmllIEE3QSwgQURDIGF1dG8tc2VsZWN0IGRpc2FibGVkKQojIE5PVEU6IHRoZSAxMkdCIGJvb3QwIGJsb2JzIGFyZSBzdG9yZWQgYXMgYmFzZTY0IGNodW5rcyAoKi5iNjQucGFydCopCiMgYmVjYXVzZSB0aGUgR2l0SHViIEFQSSBwdXNoIHBhdGggcmVqZWN0cyByYXcgYmluYXJpZXM7IHJlYXNzZW1ibGUgaGVyZS4KZWNobyAiICAxMkdCIGJvb3QgYmxvYnMg4oaSIHBhY2thZ2VzL2Jsb2JzL3N1bnhpL3N1bjYwaXcyLyIKbWtkaXIgLXAgIiRBUk1CSUFOX0RJUi9wYWNrYWdlcy9ibG9icy9zdW54aS9zdW42MGl3MiIKY3AgIiRPVkVSTEFZX0RJUi9wYWNrYWdlcy9ibG9icy9zdW54aS9zdW42MGl3Mi8iKiBcCiAgICIkQVJNQklBTl9ESVIvcGFja2FnZXMvYmxvYnMvc3VueGkvc3VuNjBpdzIvIgpmb3IgYmxvYiBpbiBib290MF9zZGNhcmRfb3JhbmdlcGk0cHJvXzEyZ2IgYm9vdDBfc3Bpbm9yX29yYW5nZXBpNHByb18xMmdiOyBkbwogICAgb3V0PSIkQVJNQklBTl9ESVIvcGFja2FnZXMvYmxvYnMvc3VueGkvc3VuNjBpdzIvJGJsb2IuZmV4IgogICAgaWYgW1sgISAtZiAiJG91dCIgXV07IHRoZW4KICAgICAgICBzaG9wdCAtcyBudWxsZ2xvYgogICAgICAgIHBhcnRzPSggIiRPVkVSTEFZX0RJUi9wYWNrYWdlcy9ibG9icy9zdW54aS9zdW42MGl3Mi8kYmxvYi5mZXguYjY0LnBhcnQiKiApCiAgICAgICAgc2hvcHQgLXUgbnVsbGdsb2IKICAgICAgICBpZiAoKCAkeyNwYXJ0c1tAXX0gPiAwICkpOyB0aGVuCiAgICAgICAgICAgIGNhdCAiJHtwYXJ0c1tAXX0iIHwgYmFzZTY0IC1kID4gIiRvdXQiCiAgICAgICAgICAgIGVjaG8gIiAgcmVhc3NlbWJsZWQgJGJsb2IuZmV4IGZyb20gJHsjcGFydHNbQF19IGNodW5rcyIKICAgICAgICBlbHNlCiAgICAgICAgICAgIGVjaG8gIiAgV0FSTklORzogJGJsb2IuZmV4IG1pc3NpbmcgYW5kIG5vIGNodW5rcyBmb3VuZCIgPiYyCiAgICAgICAgZmkKICAgIGZpCmRvbmUKCmVjaG8gIiIKZWNobyAiT3ZlcmxheSBhcHBsaWVkLiBCdWlsZCB3aXRoOiIKZWNobyAiICBjZCAkQVJNQklBTl9ESVIiCmVjaG8gIiAgc3VkbyAuL2NvbXBpbGUuc2ggQk9BUkQ9b3JhbmdlcGk0cHJvIEJSQU5DSD1uZXh0IFJFTEVBU0U9Ym9va3dvcm0gQlVJTERfREVTS1RPUD1ubyBCVUlMRF9PUFQ9aW1hZ2UiCg==
+#!/bin/bash
+# apply-overlay.sh — Apply Orange Pi 4 Pro overlay to Armbian build tree
+#
+# Usage:
+#   ./scripts/apply-overlay.sh /path/to/armbian-build
+#
+# Supports both legacy (external/) and new (flat) Armbian build layouts.
+
+set -euo pipefail
+
+OVERLAY_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+ARMBIAN_DIR="${1:?Usage: $0 /path/to/armbian-build}"
+
+# Detect layout: new (flat) or legacy (external/)
+if [[ -d "$ARMBIAN_DIR/config/boards" ]]; then
+    LAYOUT="flat"
+    CFGDIR="$ARMBIAN_DIR/config"
+    PATCHDIR="$ARMBIAN_DIR/patch"
+elif [[ -d "$ARMBIAN_DIR/external/config" ]]; then
+    LAYOUT="external"
+    CFGDIR="$ARMBIAN_DIR/external/config"
+    PATCHDIR="$ARMBIAN_DIR/external/patch"
+else
+    echo "Error: $ARMBIAN_DIR does not look like an Armbian build tree"
+    echo "Expected config/boards/ or external/config/boards/"
+    exit 1
+fi
+
+echo "Applying Orange Pi 4 Pro overlay to $ARMBIAN_DIR (layout: $LAYOUT)"
+
+# Board definition
+echo "  Board definition → $CFGDIR/boards/orangepi4pro.conf"
+mkdir -p "$CFGDIR/boards"
+cp "$OVERLAY_DIR/config/boards/orangepi4pro.conf" \
+   "$CFGDIR/boards/orangepi4pro.conf"
+
+# Bootscripts
+echo "  Bootscripts → $CFGDIR/bootscripts/"
+mkdir -p "$CFGDIR/bootscripts"
+if [[ -d "$OVERLAY_DIR/config/bootscripts" ]]; then
+    cp -r "$OVERLAY_DIR/config/bootscripts/"* "$CFGDIR/bootscripts/"
+fi
+
+# Kernel config
+echo "  Kernel config → $CFGDIR/kernel/linux-sun60iw2-next-a733.config"
+mkdir -p "$CFGDIR/kernel"
+cp "$OVERLAY_DIR/config/kernel/linux-sun60iw2-next-a733.config" \
+   "$CFGDIR/kernel/"
+
+# Kernel patch
+echo "  Kernel patch → $PATCHDIR/kernel/sun60iw2-next/"
+mkdir -p "$PATCHDIR/kernel/sun60iw2-next"
+cp "$OVERLAY_DIR/patch/kernel/sun60iw2-next/opi4pro-7.1.5.patch" \
+   "$PATCHDIR/kernel/sun60iw2-next/"
+
+# Firmware (new layout only — legacy uses cache/)
+if [[ "$LAYOUT" == "flat" ]]; then
+    echo "  Firmware → packages/firmware/"
+    mkdir -p "$ARMBIAN_DIR/packages/firmware"
+    cp -r "$OVERLAY_DIR/firmware/"* \
+       "$ARMBIAN_DIR/packages/firmware/"
+else
+    echo "  Firmware → external/cache/sources/firmware/"
+    mkdir -p "$ARMBIAN_DIR/external/cache/sources/firmware"
+    cp -r "$OVERLAY_DIR/firmware/"* \
+       "$ARMBIAN_DIR/external/cache/sources/firmware/"
+fi
+
+# 12GB DRAM fix files: prebuilt boot blobs + patched sys_config
+# (DRAM config transplanted from Radxa Cubie A7A, ADC auto-select disabled)
+# NOTE: the 12GB boot0 blobs are stored as base64 chunks (*.b64.part*)
+# because the GitHub API push path rejects raw binaries; reassemble here.
+echo "  12GB boot blobs → packages/blobs/sunxi/sun60iw2/"
+mkdir -p "$ARMBIAN_DIR/packages/blobs/sunxi/sun60iw2"
+cp "$OVERLAY_DIR/packages/blobs/sunxi/sun60iw2/"* \
+   "$ARMBIAN_DIR/packages/blobs/sunxi/sun60iw2/"
+for blob in boot0_sdcard_orangepi4pro_12gb boot0_spinor_orangepi4pro_12gb; do
+    out="$ARMBIAN_DIR/packages/blobs/sunxi/sun60iw2/$blob.fex"
+    if [[ ! -f "$out" ]]; then
+        shopt -s nullglob
+        parts=( "$OVERLAY_DIR/packages/blobs/sunxi/sun60iw2/$blob.fex.b64.part"* )
+        shopt -u nullglob
+        if (( ${#parts[@]} > 0 )); then
+            cat "${parts[@]}" | base64 -d > "$out"
+            echo "  reassembled $blob.fex from ${#parts[@]} chunks"
+        else
+            echo "  WARNING: $blob.fex missing and no chunks found" >&2
+        fi
+    fi
+done
+
+echo ""
+echo "Overlay applied. Build with:"
+echo "  cd $ARMBIAN_DIR"
+echo "  sudo ./compile.sh BOARD=orangepi4pro BRANCH=next RELEASE=bookworm BUILD_DESKTOP=no BUILD_OPT=image"
