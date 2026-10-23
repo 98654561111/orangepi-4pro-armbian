@@ -11,7 +11,9 @@ name: Build Arch Linux ARM for OPI 4 Pro 12GB
 #
 # 流程說明：
 #   1-5. 照 bzbk 的 BUILD.md：00 裝依賴 → 10 抓 orangepi-build(已 pin commit，
-#        含 native-arm64 patch) → 20 編 vendor U-Boot + kernel 6.6.98-sun60iw2
+#        含 native-arm64 patch) → 分兩步編 vendor U-Boot 與 kernel 6.6.98-sun60iw2
+#       （不直接用 bzbk 的 20 腳本：kernel build 會清掉 output/debs，連 u-boot
+#        deb 一起砍，所以 u-boot 編完先備份到 deb-backup，kernel 編完再 hoist 回來）
 #   6.   檢查＋整理 deb 產物（fail fast，有問題早點炸）：
 #        - u-boot deb 會落在 $DEBS/u-boot 子目錄 → hoist 到 $DEBS
 #        - linux-image-dbg deb 會干擾組裝腳本的 glob → 移開
@@ -71,17 +73,34 @@ jobs:
       - name: Fetch orangepi-build + native-arm64 patch
         run: ./arch-build/scripts/10-fetch-build.sh
 
-      - name: Build vendor U-Boot + kernel
-        run: ./arch-build/scripts/20-build-kernel-uboot.sh
+      - name: Build vendor U-Boot
+        run: |
+          cd arch-build/orangepi-build
+          export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
+          ./build.sh BOARD=orangepi4pro BRANCH=current RELEASE=bookworm BUILD_OPT=u-boot \
+            BUILD_DESKTOP=no BUILD_MINIMAL=no KERNEL_CONFIGURE=no
+          # kernel build 會清掉 output/debs（連 u-boot deb 一起砍），先備份到外面
+          mkdir -p "$GITHUB_WORKSPACE/deb-backup"
+          find output/debs -name 'linux-u-boot-current-orangepi4pro_*.deb' -exec cp -v {} "$GITHUB_WORKSPACE/deb-backup/" \;
+          ls -lh "$GITHUB_WORKSPACE/deb-backup/"
+
+      - name: Build vendor kernel
+        run: |
+          cd arch-build/orangepi-build
+          export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH"
+          ./build.sh BOARD=orangepi4pro BRANCH=current RELEASE=bookworm BUILD_OPT=kernel \
+            BUILD_DESKTOP=no BUILD_MINIMAL=no KERNEL_CONFIGURE=no
+          ls -lh output/debs/*.deb
 
       - name: Verify + stage deb artifacts（fail fast）
         run: |
           set -e
           DEBS="$GITHUB_WORKSPACE/arch-build/orangepi-build/output/debs"
 
-          # u-boot deb 會被放在 $DEBS/u-boot 子目錄，但 40 腳本只認 $DEBS 底下 → hoist 上來
-          UBDEB_SRC=$(find "$DEBS" -name 'linux-u-boot-current-orangepi4pro_*.deb' | head -1)
-          [ -n "$UBDEB_SRC" ] || { echo "ERROR: u-boot deb not found"; exit 1; }
+          # u-boot deb 在 kernel build 時會被清掉，已事先備份到 deb-backup → hoist 到 $DEBS
+          #（40-assemble-image.sh 只認 $DEBS 底下的 glob）
+          UBDEB_SRC=$(find "$GITHUB_WORKSPACE/deb-backup" -name 'linux-u-boot-current-orangepi4pro_*.deb' | head -1)
+          [ -n "$UBDEB_SRC" ] || { echo "ERROR: u-boot deb not found in backup"; exit 1; }
           cp -f "$UBDEB_SRC" "$DEBS/"
           echo "u-boot deb: $UBDEB_SRC"
 
