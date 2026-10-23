@@ -101,12 +101,12 @@ jobs:
           #（40-assemble-image.sh 只認 $DEBS 底下的 glob）
           UBDEB_SRC=$(find "$GITHUB_WORKSPACE/deb-backup" -name 'linux-u-boot-current-orangepi4pro_*.deb' | head -1)
           [ -n "$UBDEB_SRC" ] || { echo "ERROR: u-boot deb not found in backup"; exit 1; }
-          cp -f "$UBDEB_SRC" "$DEBS/"
+          sudo cp -f "$UBDEB_SRC" "$DEBS/"
           echo "u-boot deb: $UBDEB_SRC"
 
           # -dbg deb 會干擾 40 的 glob（head -1 會先抓到它）→ 移開
-          mkdir -p "$DEBS/dbg"
-          mv -f "$DEBS"/linux-image-current-sun60iw2-dbg_*.deb "$DEBS/dbg/" 2>/dev/null || true
+          sudo mkdir -p "$DEBS/dbg"
+          sudo mv -f "$DEBS"/linux-image-current-sun60iw2-dbg_*.deb "$DEBS/dbg/" 2>/dev/null || true
           ls -lh "$DEBS"
 
           # u-boot deb 內必須有 boot0 + boot_package，否則 40 會靜默跳過寫 bootloader
